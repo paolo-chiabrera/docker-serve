@@ -10,7 +10,7 @@ RUN mkdir -p /tmp
 
 RUN mkdir -p /opt/static
 
-RUN yarn global add serve
+RUN yarn global add serve && yarn cache clean
 
 ONBUILD COPY . /tmp
 

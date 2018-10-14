@@ -8,7 +8,7 @@ ENV PORT 80
 
 RUN mkdir -p /tmp
 
-RUN mkdir -p /opt/static
+RUN mkdir -p /opt/public
 
 RUN yarn global add serve && yarn cache clean
 
@@ -20,8 +20,8 @@ ONBUILD RUN yarn install && yarn cache clean
 
 ONBUILD RUN yarn build
 
-ONBUILD RUN cp -R /tmp/build/. /opt/static/
+ONBUILD RUN cp -R /tmp/build/. /opt/public/
 
 ONBUILD RUN rm -rf /tmp
 
-ONBUILD CMD serve -s /opt/static
+ONBUILD CMD serve -s /opt/public

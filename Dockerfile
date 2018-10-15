@@ -1,7 +1,5 @@
 FROM nginx:alpine
 
-LABEL maintainer="Paolo Chiabrera <paolo.chiabrera@gmail.com>"
-
 RUN apk add --update nodejs npm yarn
 
 RUN node -v
@@ -9,6 +7,8 @@ RUN node -v
 RUN npm -v
 
 RUN yarn -v
+
+LABEL maintainer="Paolo Chiabrera <paolo.chiabrera@gmail.com>"
 
 ENV NODE_ENV production
 
